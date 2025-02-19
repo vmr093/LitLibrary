@@ -12,9 +12,12 @@
 <body>
     
     <div class="container">
+        <!-- ✅ Banner -->
         <div class="banner">
             <img src="{% static 'books_app/images/banner2.jpg' %}" alt="LitLiterature Banner">
         </div>
+
+        <!-- ✅ Book Details -->
         <h2>{{ book.title }}</h2>
         <p><strong>Author:</strong> {{ book.author }}</p>
         <p><strong>Status:</strong> {{ book.get_status_display }}</p>
@@ -24,20 +27,26 @@
         
         <a href="{% url 'update_progress' book.id %}" class="update-link">📖 Update Progress</a>
 
+        <!-- ✅ Reviews Section -->
         <h3>Reviews</h3>
         {% for review in reviews %}
-            <p><strong>{{ review.user.username }}</strong>: {{ review.content }} ({{ review.created_at }})</p>
+            <div class="review">
+                <p><strong>{{ review.user.username }}</strong>: {{ review.content }} <br>
+                <small>({{ review.created_at }})</small></p>
+            </div>
         {% empty %}
             <p>No reviews yet.</p>
         {% endfor %}
 
+        <!-- ✅ Review Form -->
         <h3>Leave a Review</h3>
         <form method="post">
             {% csrf_token %}
-            {{ review_form.as_p }}
+            {{ review_form.as_p }}  <!-- ✅ Corrected review form -->
             <button type="submit">Submit</button>
         </form>
 
+        <!-- ✅ Back to List -->
         <div class="back-link">
             <a href="{% url 'book_list' %}">📚 Back to Book List</a>
         </div>

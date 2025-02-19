@@ -4,7 +4,6 @@ from .models import Book, Review
 from .forms import BookForm, ReviewForm, ProgressForm
 
 """View to list all books belonging to the logged-in user."""
-
 @login_required
 def book_list(request):
     books = Book.objects.filter(user=request.user)
@@ -12,7 +11,6 @@ def book_list(request):
 
 
 """View to add a new book."""
-
 @login_required
 def book_create(request):
     if request.method == "POST":
@@ -27,9 +25,7 @@ def book_create(request):
     return render(request, 'books_app/book_form.html', {'form': form})
 
 
-
 """View to update a book's details."""
-
 @login_required
 def book_update(request, pk):
     book = get_object_or_404(Book, pk=pk, user=request.user)
@@ -43,9 +39,7 @@ def book_update(request, pk):
     return render(request, "books_app/book_form.html", {"form": form, "book": book})
 
 
-
 """View to delete a book."""
-
 @login_required
 def book_delete(request, pk):
     book = get_object_or_404(Book, pk=pk, user=request.user)
@@ -54,30 +48,36 @@ def book_delete(request, pk):
         return redirect('book_list')
     return render(request, 'books_app/book_confirm_delete.html', {'book': book})
 
-"""View to show book details and reviews."""
 
+"""View to show book details and reviews."""
 @login_required
 def book_detail(request, pk):
     book = get_object_or_404(Book, pk=pk, user=request.user)
     reviews = book.reviews.all()
+
     if request.method == "POST":
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
+        review_form = ReviewForm(request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
             review.book = book
             review.user = request.user
             review.save()
             return redirect('book_detail', pk=book.pk)
     else:
-        form = ReviewForm()
-    return render(request, 'books_app/book_detail.html', {'book': book, 'reviews': reviews, 'form': form})
+        review_form = ReviewForm()
+
+    return render(request, 'books_app/book_detail.html', {
+        'book': book,
+        'reviews': reviews,
+        'review_form': review_form
+    })
 
 
 """View to update the user's progress in a book."""
-
+@login_required
 def update_progress(request, pk):
-    book = get_object_or_404(Book, pk=pk)
-    
+    book = get_object_or_404(Book, pk=pk, user=request.user)
+
     if request.method == "POST":
         form = ProgressForm(request.POST, instance=book)
         if form.is_valid():
@@ -90,7 +90,6 @@ def update_progress(request, pk):
 
 
 """View to toggle a book as a favorite."""
-
 @login_required
 def toggle_favorite(request, pk):
     book = get_object_or_404(Book, pk=pk, user=request.user)
@@ -98,8 +97,9 @@ def toggle_favorite(request, pk):
     book.save()
     return redirect('book_list')
 
+
+"""View to show all favorite books."""
 @login_required
 def favorite_books(request):
-    """View to show all favorite books."""
     books = Book.objects.filter(user=request.user, favorite=True)
     return render(request, 'books_app/favorite_books.html', {'books': books})
