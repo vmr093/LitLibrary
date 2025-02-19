@@ -112,3 +112,25 @@ th {
 .unfavorite {
     color: gray;
 }
+
+/* ✅ Enhanced Banner Styling */
+.banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 150px; /* Adjust size as needed */
+    display: block;
+    margin: 0 auto;
+}
+
+/* ✅ Updated LitLiterature Styling */
+.banner h1 {
+    font-size: 42px; /* Increased size */
+    color: #8B0000; /* Deep Red - Stands out but still classy */
+    font-weight: bold;
+    letter-spacing: 2px; /* Adds a stylish spacing effect */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for pop */
+    margin-top: 10px;
+}

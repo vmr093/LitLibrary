@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}  <!-- ✅ This line ensures Django can use static files -->
+    {% load static %}  <!-- ✅ Load static files for CSS and images -->
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- ✅ Added Banner with Logo -->
+        <div class="banner">
+            <h1>LitLiterature</h1>
+        </div>
+
         <h2>My Books</h2>
         <nav>
             <a href="{% url 'book_create' %}">➕ Add a New Book</a> | 
@@ -35,7 +40,11 @@
                     <a href="{% url 'book_update' book.id %}">✏️ Edit</a> |
                     <a href="{% url 'book_delete' book.id %}">🗑️ Delete</a> |
                     <a href="{% url 'toggle_favorite' book.id %}">
-                        {% if book.is_favorite %}❤️ Unfavorite{% else %}🤍 Favorite{% endif %}
+                        {% if book.favorite %}
+                            ❤️ In Favorites
+                        {% else %}
+                            🤍 Favorite
+                        {% endif %}
                     </a>
                 </td>
             </tr>
