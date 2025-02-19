@@ -5,13 +5,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'books_app/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Books</title>
+    <title>My Favorite Books</title>
 </head>
 <body>
-    <h2>My Books</h2>
-    <a href="{% url 'book_create' %}">➕ Add a New Book</a> | 
-    <a href="{% url 'favorite_books' %}">❤️ View Favorites</a> | 
-    <a href="{% url 'logout' %}">Logout</a>
+    <h2>❤️ My Favorite Books</h2>
+    <a href="{% url 'book_list' %}">📚 Back to All Books</a>
 
     <table>
         <tr>
@@ -26,16 +24,12 @@
             <td>{{ book.author }}</td>
             <td>{{ book.get_status_display }}</td>
             <td>
-                <a href="{% url 'book_update' book.id %}">✏️ Edit</a>
-                <a href="{% url 'book_delete' book.id %}">🗑️ Delete</a>
-                <a href="{% url 'toggle_favorite' book.id %}">
-                    {% if book.favorite %}💛 Unfavorite{% else %}🤍 Favorite{% endif %}
-                </a>
+                <a href="{% url 'toggle_favorite' book.id %}">💛 Unfavorite</a>
             </td>
         </tr>
         {% empty %}
         <tr>
-            <td colspan="4">No books added yet.</td>
+            <td colspan="4">No favorite books yet.</td>
         </tr>
         {% endfor %}
     </table>

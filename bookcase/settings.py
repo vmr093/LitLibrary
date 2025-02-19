@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'books_app',  # ✅ Your books tracking app
+    'books_app',  
 ]
 
 MIDDLEWARE = [
@@ -81,6 +81,9 @@ USE_TZ = True
 
 # ✅ Static & Media Files
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # ✅ Ensure this directory exists
+]
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = '/media/'

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Progress - {{ book.title }}</title>
+</head>
+<body>
+    <h2>Update Progress for {{ book.title }}</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="current_page">Current Page:</label>
+        <input type="number" name="current_page" value="{{ book.current_page }}" min="0" max="{{ book.total_pages }}">
+        <button type="submit">Update</button>
+    </form>
+
+    <a href="{% url 'book_detail' book.id %}">⬅ Back to Book</a>
+</body>
+</html>
