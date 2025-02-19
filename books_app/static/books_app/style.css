@@ -1,35 +1,77 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    margin-top: 50px;
+    background-image: url('/static/books_app/images/background pic 2.avif');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: rgba(60, 51, 56, 0.8); /* Updated text color */
 }
 
-table {
+/* Centering the Container */
+.container {
     width: 80%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
     margin: auto;
+}
+
+/* Header Styling */
+h2 {
+    color: rgba(60, 51, 56, 0.8); /* Updated text color */
+    font-size: 24px;
+}
+
+/* Navigation Links */
+a {
+    text-decoration: none;
+    color: rgba(60, 51, 56, 0.8); /* Updated text color */
+    font-weight: bold;
+}
+
+a:hover {
+    color: #d63447;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 th, td {
+    border: 1px solid rgba(60, 51, 56, 0.3);
     padding: 10px;
-    border: 1px solid black;
     text-align: left;
+    color: rgba(60, 51, 56, 0.8); /* Updated text color */
 }
 
-a {
-    margin-right: 10px;
+th {
+    background-color: rgba(60, 51, 56, 0.3);
+    font-weight: bold;
 }
 
-button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
+/* Buttons and Actions */
+.actions a {
+    margin: 0 10px;
+    color: rgba(60, 51, 56, 0.8); /* Updated text color */
 }
 
-button:hover {
-    background-color: #0056b3;
+.favorite {
+    color: red;
+}
+
+.unfavorite {
+    color: gray;
 }
