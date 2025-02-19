@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
+    
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Book</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'books_app/style.css' %}">
 </head>
 <body>
-    <h1>Add a New Book</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add Book</button>
-    </form>
-    <a href="{% url 'book_list' %}">Back to List</a>
+
+    <div class="container">
+        <h1>Add a New Book</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Book</button>
+        </form>
+
+        <div class="back-link">
+            <a href="{% url 'book_list' %}">📚 Back to Book List</a>
+        </div>
+    </div>
+
 </body>
 </html>
+

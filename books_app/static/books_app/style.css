@@ -1,7 +1,7 @@
 /* General Styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/books_app/images/background pic 2.avif');
+    background-image: url('/static/books_app/images/background pic 3.jpeg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -30,6 +30,43 @@ body {
 h2 {
     color: rgba(60, 51, 56, 0.8); /* Updated text color */
     font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    background: rgba(60, 51, 56, 0.8); /* Updated button color */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor:pointer;
+    font-size: 16px;
+
+}
+
+button:hover {
+    background: rgba(90, 81, 86, 0.9);
+}
+
+/* Center the back link at the bottom */
+.back-link {
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
 }
 
 /* Navigation Links */
