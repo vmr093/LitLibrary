@@ -15,6 +15,7 @@ class Book(models.Model):
     current_page = models.IntegerField(default=0)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='wishlist')
     favorite = models.BooleanField(default=False)  # ✅ Favorite feature
+    cover_image = models.URLField(blank=True, null=True)  # ✅ New field for book cover
 
     def __str__(self):
         return f"{self.title} by {self.author}"

@@ -16,6 +16,12 @@
         <div class="banner">
             <img src="{% static 'books_app/images/banner2.jpg' %}" alt="LitLiterature Banner">
         </div>
+        
+        {% if book.cover_image %}
+        <img src="{{ book.cover_image }}" alt="Cover of {{ book.title }}" class="book-cover">
+    {% else %}
+        <p>No Cover Available</p>
+    {% endif %}
 
         <!-- ✅ Book Details -->
         <h2>{{ book.title }}</h2>
@@ -23,7 +29,6 @@
         <p><strong>Status:</strong> {{ book.get_status_display }}</p>
         <p><strong>Total Pages:</strong> {{ book.total_pages }}</p>
         <p><strong>Current Page:</strong> {{ book.current_page }}</p>
-        <p><strong>Progress:</strong> 📖 {{ book.progress_percentage }}%</p>
         
         <a href="{% url 'update_progress' book.id %}" class="update-link">📖 Update Progress</a>
 
@@ -42,7 +47,7 @@
         <h3>Leave a Review</h3>
         <form method="post">
             {% csrf_token %}
-            {{ review_form.as_p }}  <!-- ✅ Corrected review form -->
+            {{ review_form.as_p }}  
             <button type="submit">Submit</button>
         </form>
 

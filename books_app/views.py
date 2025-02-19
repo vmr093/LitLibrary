@@ -1,9 +1,13 @@
+import requests
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Book, Review
 from .forms import BookForm, ReviewForm, ProgressForm
 
-"""View to list all books belonging to the logged-in user."""
+
+GOOGLE_BOOKS_API_URL = "https://www.googleapis.com/books/v1/volumes?q="
+
+
 @login_required
 def book_list(request):
     books = Book.objects.filter(user=request.user)
@@ -18,6 +22,14 @@ def book_create(request):
         if form.is_valid():
             book = form.save(commit=False)
             book.user = request.user
+            query = f"{book.title} {book.author}"
+            response = requests.get(f"{GOOGLE_BOOKS_API_URL}{query}")
+            data = response.json()
+
+            if "items" in data:
+                book.cover_image = data["items"][0]["volumeInfo"].get("imageLinks", {}).get("thumbnail", "")
+
+
             book.save()
             return redirect('book_list')
     else:

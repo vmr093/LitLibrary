@@ -73,4 +73,10 @@ button:hover {
     border-radius: 10px; /* Optional: Rounded corners */
 }
 
-
+.book-cover {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}

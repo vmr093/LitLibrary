@@ -26,6 +26,7 @@
 
         <table>
             <tr>
+                <th>Cover</th>
                 <th>Title</th>
                 <th>Author</th>
                 <th>Status</th>
@@ -33,6 +34,13 @@
             </tr>
             {% for book in books %}
             <tr>
+                <td>
+                    {% if book.cover_image %}
+                        <img src="{{ book.cover_image }}" alt="Cover of {{ book.title }}" class="book-cover">
+                    {% else %}
+                        <p>No Cover Available</p>
+                    {% endif %}
+                </td>
                 <td><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></td>
                 <td>{{ book.author }}</td>
                 <td>{{ book.get_status_display }}</td>
@@ -40,17 +48,13 @@
                     <a href="{% url 'book_update' book.id %}">✏️ Edit</a> |
                     <a href="{% url 'book_delete' book.id %}">🗑️ Delete</a> |
                     <a href="{% url 'toggle_favorite' book.id %}">
-                        {% if book.favorite %}
-                            ❤️ In Favorites
-                        {% else %}
-                            🤍 Favorite
-                        {% endif %}
+                        {% if book.favorite %}❤️ In Favorites{% else %}🤍 Favorite{% endif %}
                     </a>
                 </td>
             </tr>
             {% empty %}
             <tr>
-                <td colspan="4">No books added yet.</td>
+                <td colspan="5">No books added yet.</td>
             </tr>
             {% endfor %}
         </table>
