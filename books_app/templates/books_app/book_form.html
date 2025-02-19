@@ -2,24 +2,31 @@
 <html lang="en">
 <head>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'books_app/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if book.id %}Edit{% else %}Add{% endif %} Book</title>  <!-- ✅ Dynamic Title -->
+    <title>{% if book %}Edit{% else %}Add{% endif %} Book</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'books_app/css/book_create.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h2>{% if book.id %}Edit{% else %}Add{% endif %} Book</h2> <!-- ✅ Dynamic Heading -->
 
+    <div class="container">
+        <div class="banner">
+            <img src="{% static 'books_app/images/banner2.jpg' %}" alt="LitLiterature Banner">
+        </div>
+
+        <h2>{% if book %}Edit{% else %}Add{% endif %} Book</h2>
+        
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">{% if book.id %}Save Changes{% else %}Add Book{% endif %}</button>  <!-- ✅ Dynamic Button Text -->
+            <button type="submit">Save</button>
         </form>
 
         <div class="back-link">
             <a href="{% url 'book_list' %}">📚 Back to Book List</a>
         </div>
     </div>
+
 </body>
 </html>

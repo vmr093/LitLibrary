@@ -10,16 +10,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'books_app/css/update_progress.css' %}">
 </head>
 <body>
+   
     <div class="container">
+        <img src="{% static 'books_app/images/banner2.jpg' %}" alt="LitLiterature Banner" class="banner">
+    
         <h2>Update Progress for {{ book.title }}</h2>
-        
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">📖 Update</button>
         </form>
-
-        <!-- ✅ Back Link -->
+    
         <div class="back-link">
             <a href="{% url 'book_detail' book.id %}">⬅ Back to Book</a>
         </div>

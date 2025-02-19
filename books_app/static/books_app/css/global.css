@@ -1,7 +1,7 @@
 /* Global Background Styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/books_app/images/background.avif');
+    background-image: url('/static/books_app/images/background.webp');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -13,3 +13,6 @@ body {
     min-height: 100vh;
     color: rgba(60, 51, 56, 0.8); /* Updated text color */
 }
+
+
+

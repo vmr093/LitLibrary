@@ -13,15 +13,16 @@
 <body>
     <div class="container">
         <div class="banner">
-            <h1>LitLiterature</h1>
+            <img src="{% static 'books_app/images/banner2.jpg' %}" alt="LitLiterature Banner">
         </div>
-
+    
         <h2>My Books</h2>
         <nav>
             <a href="{% url 'book_create' %}">➕ Add a New Book</a> | 
             <a href="{% url 'favorite_books' %}">❤️ View Favorites</a> | 
             <a href="{% url 'logout' %}">Logout</a>
         </nav>
+    
 
         <table>
             <tr>

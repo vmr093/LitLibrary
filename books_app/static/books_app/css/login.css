@@ -1,23 +1,35 @@
-@import url('book_list.css'); /* Inherit global styles */
-@import url('global.css'); /* Inherit the background */
+/* Apply same background */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/books_app/images/background.webp'); /* Change if needed */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: rgba(60, 51, 56, 0.8); /* Updated text color */
+}
 
-@import url('global.css'); /* Inherit background */
-
+/* Centered container */
 .container {
     width: 80%;
-    max-width: 900px;
+    max-width: 400px;
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     text-align: center;
-    margin: auto;
 }
 
-/* Header Styling */
+/* Header */
 h2 {
-    color: rgba(60, 51, 56, 0.8);
-    font-size: 24px;
+    color: rgba(60, 51, 56, 0.9);
+    font-size: 28px;
+    font-weight: bold;
 }
 
 /* Form Styling */
@@ -28,29 +40,40 @@ form {
     align-items: center;
 }
 
+/* Form inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(60, 51, 56, 0.4);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button styling */
 button {
     background: rgba(60, 51, 56, 0.8);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    width: 100%;
 }
 
 button:hover {
     background: rgba(90, 81, 86, 0.9);
 }
 
-/* Center the back link */
+/* Back to Books link */
 .back-link {
     margin-top: 20px;
 }
 
 .back-link a {
+    text-decoration: none;
     color: rgba(60, 51, 56, 0.8);
     font-weight: bold;
-    text-decoration: none;
     font-size: 18px;
 }
 
@@ -72,5 +95,4 @@ button:hover {
     height: auto;
     border-radius: 10px; /* Optional: Rounded corners */
 }
-
 

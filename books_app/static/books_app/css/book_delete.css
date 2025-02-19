@@ -1,7 +1,7 @@
 /* Apply the same background from book_list */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/books_app/images/background.avif');
+    background-image: url('/static/books_app/images/background.webp');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -72,3 +72,20 @@ h2 {
 .back-link a:hover {
     text-decoration: underline;
 }
+
+.banner {
+    width: 100%; /* Full width on all pages */
+    display: flex;
+    justify-content: center; /* Centers the banner */
+    align-items: center;
+    margin-bottom: 20px; /* Space between banner and content */
+}
+
+.banner img {
+    width: 100%; /* Full width inside container */
+    max-width: 900px; /* Same as container width */
+    height: auto;
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+

@@ -62,3 +62,19 @@ button:hover {
 .back-link a:hover {
     background-color: rgba(90, 81, 86, 1);  
 }
+
+.banner {
+    width: 100%;  /* Ensures the banner spans the full width of the container */
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;  /* Centers the banner */
+}
+
+
+.banner img {
+    width: 100%; /* Full width inside container */
+    max-width: 900px; /* Same as container width */
+    height: auto;
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+

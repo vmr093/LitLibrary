@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'books_app/css/login.css' %}">
 </head>
 <body>
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
-    <p>Don't have an account? <a href="{% url 'admin:auth_user_add' %}">Sign up</a></p>
+   
+    <div class="container">
+        <div class="banner">
+            <img src="{% static 'books_app/images/banner2.jpg' %}" alt="LitLiterature Banner">
+        </div>
+        <h2>📖 Welcome to LitLibrary</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">🔑 Login</button>
+        </form>
+
+        <div class="back-link">
+            <a href="{% url 'book_list' %}">📚 Back to Books</a>
+        </div>
+    </div>
 </body>
 </html>

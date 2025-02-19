@@ -10,7 +10,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'books_app/css/book_delete.css' %}">
 </head>
 <body>
+    
     <div class="container">
+        <div class="banner">
+            <img src="{% static 'books_app/images/banner2.jpg' %}" alt="LitLiterature Banner">
+        </div>
         <h2>Are you sure you want to delete "{{ book.title }}"?</h2>
 
         <form method="post">
@@ -22,5 +26,6 @@
             <a href="{% url 'book_list' %}">📚 Back to Book List</a>
         </div>
     </div>
+    
 </body>
 </html>

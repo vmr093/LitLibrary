@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/books_app/images/background.avif');
+    background-image: url('/static/books_app/images/background.webp');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -133,4 +133,4 @@ th {
     letter-spacing: 2px; /* Adds a stylish spacing effect */
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for pop */
     margin-top: 10px;
-}
+}  

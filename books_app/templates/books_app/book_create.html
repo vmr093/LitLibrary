@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        body {
-            border: 5px solid red !important;
-        }
-    </style>
     
     {% load static %}  <!-- ✅ Load static files -->
     
@@ -16,7 +11,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'books_app/css/book_create.css' %}">
 </head>
 <body>
+    
     <div class="container">
+        <div class="banner">
+            <img src="{% static 'books_app/images/banner2.jpg' %}" alt="LitLiterature Banner">
+        </div>
         <!-- ✅ Centered Header -->
         <h2>Add a New Book</h2>
         
