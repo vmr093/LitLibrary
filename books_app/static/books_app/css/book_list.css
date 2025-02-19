@@ -1,0 +1,69 @@
+@import url('global.css'); /* Inherit the background */
+
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/books_app/images/background.avif');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: rgba(60, 51, 56, 0.8);
+}
+
+/* Centering the Container */
+.container {
+    width: 80%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: auto;
+}
+
+/* Navigation */
+nav a {
+    text-decoration: none;
+    color: rgba(60, 51, 56, 0.8);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d63447;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid rgba(60, 51, 56, 0.3);
+    padding: 10px;
+    text-align: left;
+    color: rgba(60, 51, 56, 0.8);
+}
+
+th {
+    background-color: rgba(60, 51, 56, 0.3);
+    font-weight: bold;
+}
+
+/* Favorites */
+.favorite {
+    color: red;
+}
+
+.unfavorite {
+    color: gray;
+}

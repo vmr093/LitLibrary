@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}  <!-- ✅ Load static files for CSS and images -->
+    {% load static %}  
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Books</title>
     
     <!-- Link to external CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'books_app/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'books_app/css/book_list.css' %}">
 </head>
 <body>
     <div class="container">
-        <!-- ✅ Added Banner with Logo -->
         <div class="banner">
             <h1>LitLiterature</h1>
         </div>

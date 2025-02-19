@@ -1,7 +1,7 @@
-/* General Styling */
+
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/books_app/images/background pic 3.jpeg');
+    background-image: url('/static/books_app/images/background.avif');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: rgba(60, 51, 56, 0.8); /* Updated text color */
+    color: rgba(60, 51, 56, 0.8); 
 }
 
 /* Centering the Container */

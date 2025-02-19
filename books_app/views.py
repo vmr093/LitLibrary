@@ -40,7 +40,8 @@ def book_update(request, pk):
             return redirect('book_list')
     else:
         form = BookForm(instance=book)
-    return render(request, 'books_app/book_form.html', {'form': form})
+    return render(request, "books_app/book_form.html", {"form": form, "book": book})
+
 
 
 """View to delete a book."""

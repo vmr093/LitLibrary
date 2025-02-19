@@ -2,36 +2,44 @@
 <html lang="en">
 <head>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'books_app/style.css' %}">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'books_app/css/favorite_books.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Favorite Books</title>
 </head>
 <body>
-    <h2>❤️ My Favorite Books</h2>
-    <a href="{% url 'book_list' %}">📚 Back to All Books</a>
+    <div class="container">
+        <h2>❤️ My Favorite Books</h2>
 
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-        {% for book in books %}
-        <tr>
-            <td><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></td>
-            <td>{{ book.author }}</td>
-            <td>{{ book.get_status_display }}</td>
-            <td>
-                <a href="{% url 'toggle_favorite' book.id %}">💛 Unfavorite</a>
-            </td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="4">No favorite books yet.</td>
-        </tr>
-        {% endfor %}
-    </table>
+        <nav>
+            <a href="{% url 'book_list' %}">📚 Back to All Books</a>
+        </nav>
+
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.get_status_display }}</td>
+                <td>
+                    <a href="{% url 'toggle_favorite' book.id %}">
+                        💔 Remove from Favorites
+                    </a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No favorite books yet.</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>

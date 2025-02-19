@@ -1,0 +1,59 @@
+@import url('book_list.css'); /* Inherit global styles */
+@import url('global.css'); /* Inherit the background */
+
+@import url('global.css'); /* Inherit background */
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: auto;
+}
+
+/* Header Styling */
+h2 {
+    color: rgba(60, 51, 56, 0.8);
+    font-size: 24px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    background: rgba(60, 51, 56, 0.8);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: rgba(90, 81, 86, 0.9);
+}
+
+/* Center the back link */
+.back-link {
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: rgba(60, 51, 56, 0.8);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

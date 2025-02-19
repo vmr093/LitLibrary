@@ -5,17 +5,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'books_app/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if book %}Edit{% else %}Add{% endif %} Book</title>
+    <title>{% if book.id %}Edit{% else %}Add{% endif %} Book</title>  <!-- ✅ Dynamic Title -->
 </head>
 <body>
-    <h2>{% if book %}Edit{% else %}Add{% endif %} Book</h2>
+    <div class="container">
+        <h2>{% if book.id %}Edit{% else %}Add{% endif %} Book</h2> <!-- ✅ Dynamic Heading -->
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">{% if book.id %}Save Changes{% else %}Add Book{% endif %}</button>  <!-- ✅ Dynamic Button Text -->
+        </form>
 
-    <a href="{% url 'book_list' %}">📚 Back to Book List</a>
+        <div class="back-link">
+            <a href="{% url 'book_list' %}">📚 Back to Book List</a>
+        </div>
+    </div>
 </body>
 </html>

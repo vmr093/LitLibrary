@@ -10,9 +10,9 @@ SECRET_KEY = 'your-secret-key-here'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []  # Add domains here when deploying
+ALLOWED_HOSTS = []  
 
-# Application definition
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,7 +38,7 @@ ROOT_URLCONF = 'bookcase.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # ✅ Custom templates folder
+        'DIRS': [BASE_DIR / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -57,7 +57,7 @@ WSGI_APPLICATION = 'bookcase.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'books_app',  # Make sure this database exists in PostgreSQL
+        'NAME': 'books_app',  
         'USER': 'vr',
         'PASSWORD': 'Nala1234',
         'HOST': 'localhost',
@@ -82,17 +82,17 @@ USE_TZ = True
 # ✅ Static & Media Files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # ✅ Ensure this directory exists
+    BASE_DIR / 'static',  
 ]
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "books_app/static"),]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # ✅ Authentication settings
-LOGIN_URL = '/login/'  # Redirects users to this URL if they're not logged in
-LOGIN_REDIRECT_URL = '/books/'  # Redirect after login
-LOGOUT_REDIRECT_URL = '/login/'  # Redirect after logout
+LOGIN_URL = '/login/'  
+LOGIN_REDIRECT_URL = '/books/'  
+LOGOUT_REDIRECT_URL = '/login/'  
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

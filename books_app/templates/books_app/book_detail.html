@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}  <!-- ✅ Load static files -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ book.title }}</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'books_app/css/book_detail.css' %}">
 </head>
 <body>
-    <h2>{{ book.title }}</h2>
-    <p><strong>Author:</strong> {{ book.author }}</p>
-    <p><strong>Status:</strong> {{ book.get_status_display }}</p>
-    <p><strong>Total Pages:</strong> {{ book.total_pages }}</p>
-    <p><strong>Current Page:</strong> {{ book.current_page }}</p>
-    <p><strong>Progress:</strong> {{ book.progress_percentage }}%</p>
+    <div class="container">
+        <h2>{{ book.title }}</h2>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Status:</strong> {{ book.get_status_display }}</p>
+        <p><strong>Total Pages:</strong> {{ book.total_pages }}</p>
+        <p><strong>Current Page:</strong> {{ book.current_page }}</p>
+        <p><strong>Progress:</strong> 📖 {{ book.progress_percentage }}%</p>
+        
+        <a href="{% url 'update_progress' book.id %}" class="update-link">📖 Update Progress</a>
 
-    <a href="{% url 'update_progress' book.id %}">📖 Update Progress</a>
+        <h3>Reviews</h3>
+        {% for review in reviews %}
+            <p><strong>{{ review.user.username }}</strong>: {{ review.content }} ({{ review.created_at }})</p>
+        {% empty %}
+            <p>No reviews yet.</p>
+        {% endfor %}
 
-    <h3>Reviews</h3>
-    {% for review in reviews %}
-        <p><strong>{{ review.user.username }}</strong>: {{ review.content }} ({{ review.created_at }})</p>
-    {% empty %}
-        <p>No reviews yet.</p>
-    {% endfor %}
+        <h3>Leave a Review</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ review_form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
 
-    <h3>Leave a Review</h3>
-    <form method="post">
-        {% csrf_token %}
-        {{ review_form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-
-    <a href="{% url 'book_list' %}">📚 Back to Book List</a>
+        <div class="back-link">
+            <a href="{% url 'book_list' %}">📚 Back to Book List</a>
+        </div>
+    </div>
 </body>
 </html>
-
