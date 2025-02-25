@@ -1,0 +1,90 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/books_app/images/background.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: rgba(60, 51, 56, 0.8);
+}
+
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; 
+}
+
+
+h2 {
+    color: rgba(60, 51, 56, 0.8);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.delete-button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-block;  
+    width: auto;  
+    white-space: nowrap;  
+    margin-bottom: 20px; 
+}
+
+.delete-button:hover {
+    background: darkred;
+}
+
+
+.back-link {
+    margin-top: 20px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: rgba(60, 51, 56, 0.8);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    width: 100%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+.banner img {
+    width: 100%; 
+    max-width: 900px; 
+    height: auto;
+    border-radius: 10px;
+}
+
+

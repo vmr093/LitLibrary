@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from django.views.generic.base import RedirectView  # <-- ADD THIS IMPORT
+from django.views.generic.base import RedirectView  # <-- Ensure this import is here
+from django.conf import settings
+from django.conf.urls.static import static
 from books_app.views import signup, custom_logout
 
 urlpatterns = [
@@ -19,3 +21,7 @@ urlpatterns = [
     path('accounts/reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('accounts/reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 ]
+
+# Serve static files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
