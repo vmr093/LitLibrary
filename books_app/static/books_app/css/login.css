@@ -1,7 +1,7 @@
-/* Apply same background */
+
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/books_app/images/background.webp'); /* Change if needed */
+    background-image: url('/static/books_app/images/background.webp'); 
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -11,10 +11,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: rgba(60, 51, 56, 0.8); /* Updated text color */
+    color: rgba(60, 51, 56, 0.8); 
 }
 
-/* Centered container */
+
 .container {
     width: 80%;
     max-width: 400px;
@@ -25,14 +25,14 @@ body {
     text-align: center;
 }
 
-/* Header */
+
 h2 {
     color: rgba(60, 51, 56, 0.9);
     font-size: 28px;
     font-weight: bold;
 }
 
-/* Form Styling */
+
 form {
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ form {
     align-items: center;
 }
 
-/* Form inputs */
+
 input {
     width: 100%;
     padding: 10px;
@@ -49,7 +49,7 @@ input {
     font-size: 16px;
 }
 
-/* Button styling */
+
 button {
     background: rgba(60, 51, 56, 0.8);
     color: white;
@@ -65,7 +65,7 @@ button:hover {
     background: rgba(90, 81, 86, 0.9);
 }
 
-/* Back to Books link */
+
 .back-link {
     margin-top: 20px;
 }
@@ -82,17 +82,17 @@ button:hover {
 }
 
 .banner {
-    width: 100%; /* Full width on all pages */
+    width: 100%; 
     display: flex;
-    justify-content: center; /* Centers the banner */
+    justify-content: center; 
     align-items: center;
-    margin-bottom: 20px; /* Space between banner and content */
+    margin-bottom: 20px; 
 }
 
 .banner img {
-    width: 100%; /* Full width inside container */
-    max-width: 900px; /* Same as container width */
+    width: 100%; 
+    max-width: 900px; 
     height: auto;
-    border-radius: 10px; /* Optional: Rounded corners */
+    border-radius: 10px; 
 }
 

@@ -1,4 +1,4 @@
-/* Apply the same background from book_list */
+
 body {
     font-family: Arial, sans-serif;
     background-image: url('/static/books_app/images/background.webp');
@@ -14,7 +14,7 @@ body {
     color: rgba(60, 51, 56, 0.8); /* Text color */
 }
 
-/* ✅ Flexbox container to center everything */
+
 .container {
     width: 80%;
     max-width: 900px;
@@ -27,26 +27,26 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Adds spacing between items */
+    gap: 20px; 
 }
 
-/* ✅ Header */
+
 h2 {
     color: rgba(60, 51, 56, 0.8);
     font-size: 28px;
     font-weight: bold;
 }
 
-/* ✅ Form Styling */
+
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 100%; /* Make sure form takes full width */
+    width: 100%; 
     align-items: center;
 }
 
-/* ✅ Button Styling */
+
 button {
     background: rgba(60, 51, 56, 0.8);
     color: white;
@@ -63,7 +63,7 @@ button:hover {
 }
 
 
-/* Center the back link */
+
 .back-link {
     margin-top: 20px;
 }
@@ -80,17 +80,17 @@ button:hover {
 }
 
 .banner {
-    width: 100%; /* Full width on all pages */
+    width: 100%;
     display: flex;
-    justify-content: center; /* Centers the banner */
+    justify-content: center; 
     align-items: center;
-    margin-bottom: 20px; /* Space between banner and content */
+    margin-bottom: 20px; 
 }
 
 .banner img {
-    width: 100%; /* Full width inside container */
-    max-width: 900px; /* Same as container width */
+    width: 100%; 
+    max-width: 900px; 
     height: auto;
-    border-radius: 10px; /* Optional: Rounded corners */
+    border-radius: 10px; 
 }
 

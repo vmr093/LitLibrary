@@ -14,7 +14,7 @@ body {
     color: rgba(60, 51, 56, 0.8); 
 }
 
-/* Centering the Container */
+
 .container {
     width: 80%;
     max-width: 900px;
@@ -26,9 +26,9 @@ body {
     margin: auto;
 }
 
-/* Header Styling */
+
 h2 {
-    color: rgba(60, 51, 56, 0.8); /* Updated text color */
+    color: rgba(60, 51, 56, 0.8); 
     font-size: 24px;
 }
 
@@ -39,7 +39,7 @@ form {
 }
 
 button {
-    background: rgba(60, 51, 56, 0.8); /* Updated button color */
+    background: rgba(60, 51, 56, 0.8); 
     color: white;
     border: none;
     padding: 10px;
@@ -53,7 +53,7 @@ button:hover {
     background: rgba(90, 81, 86, 0.9);
 }
 
-/* Center the back link at the bottom */
+
 .back-link {
     margin-top: 20px;
 }
@@ -69,10 +69,10 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Navigation Links */
+
 a {
     text-decoration: none;
-    color: rgba(60, 51, 56, 0.8); /* Updated text color */
+    color: rgba(60, 51, 56, 0.8); 
     font-weight: bold;
 }
 
@@ -80,7 +80,7 @@ a:hover {
     color: #d63447;
 }
 
-/* Table Styling */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -91,7 +91,7 @@ th, td {
     border: 1px solid rgba(60, 51, 56, 0.3);
     padding: 10px;
     text-align: left;
-    color: rgba(60, 51, 56, 0.8); /* Updated text color */
+    color: rgba(60, 51, 56, 0.8); 
 }
 
 th {
@@ -99,11 +99,10 @@ th {
     font-weight: bold;
 }
 
-/* Buttons and Actions */
+
 .actions a {
     margin: 0 10px;
-    color: rgba(60, 51, 56, 0.8); /* Updated text color */
-}
+    color: rgba(60, 51, 56, 0.8); 
 
 .favorite {
     color: red;
@@ -113,7 +112,7 @@ th {
     color: gray;
 }
 
-/* ✅ Enhanced Banner Styling */
+
 .banner {
     text-align: center;
     margin-bottom: 20px;
@@ -125,12 +124,13 @@ th {
     margin: 0 auto;
 }
 
-/* ✅ Updated LitLiterature Styling */
+
 .banner h1 {
-    font-size: 42px; /* Increased size */
-    color: #8B0000; /* Deep Red - Stands out but still classy */
+    font-size: 42px; 
+    color: #8B0000; 
     font-weight: bold;
-    letter-spacing: 2px; /* Adds a stylish spacing effect */
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for pop */
+    letter-spacing: 2px; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); 
     margin-top: 10px;
 }  
+}

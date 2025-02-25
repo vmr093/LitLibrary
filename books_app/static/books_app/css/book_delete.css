@@ -1,4 +1,4 @@
-/* Apply the same background from book_list */
+
 body {
     font-family: Arial, sans-serif;
     background-image: url('/static/books_app/images/background.webp');
@@ -14,7 +14,7 @@ body {
     color: rgba(60, 51, 56, 0.8);
 }
 
-/* Centered Container */
+
 .container {
     width: 80%;
     max-width: 900px;
@@ -27,18 +27,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 25px; /* Increased spacing between elements */
+    gap: 25px; 
 }
 
-/* Header */
+
 h2 {
     color: rgba(60, 51, 56, 0.8);
     font-size: 28px;
     font-weight: bold;
 }
 
-/* Delete Button */
-/* Delete Button */
+
 .delete-button {
     background: red;
     color: white;
@@ -47,17 +46,17 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
-    display: inline-block;  /* ✅ Ensures it stays on one line */
-    width: auto;  /* ✅ Prevents unnecessary stretching */
-    white-space: nowrap;  /* ✅ Prevents line breaks */
-    margin-bottom: 20px; /* Adds spacing below */
+    display: inline-block;  
+    width: auto;  
+    white-space: nowrap;  
+    margin-bottom: 20px; 
 }
 
 .delete-button:hover {
     background: darkred;
 }
 
-/* Center the back link */
+
 .back-link {
     margin-top: 20px;
 }
@@ -74,18 +73,18 @@ h2 {
 }
 
 .banner {
-    width: 100%; /* Full width on all pages */
+    width: 100%; 
     display: flex;
-    justify-content: center; /* Centers the banner */
+    justify-content: center; 
     align-items: center;
-    margin-bottom: 20px; /* Space between banner and content */
+    margin-bottom: 20px; 
 }
 
 .banner img {
-    width: 100%; /* Full width inside container */
-    max-width: 900px; /* Same as container width */
+    width: 100%; 
+    max-width: 900px; 
     height: auto;
-    border-radius: 10px; /* Optional: Rounded corners */
+    border-radius: 10px;
 }
 
 

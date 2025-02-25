@@ -1,6 +1,6 @@
-@import url('global.css'); /* Inherit background from global styles */
+@import url('global.css'); 
 
-/* ✅ Centered Container */
+
 .container {
     width: 80%;
     max-width: 900px;
@@ -12,17 +12,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Adds spacing between elements */
+    gap: 20px; 
 }
 
-/* ✅ Header */
+
 h2 {
     color: rgba(60, 51, 56, 0.8);
     font-size: 28px;
     font-weight: bold;
 }
 
-/* ✅ Form Styling */
+
 form {
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ form {
     align-items: center;
 }
 
-/* ✅ Button Styling */
+
 button {
     background: rgba(60, 51, 56, 0.8);
     color: white;
@@ -47,10 +47,10 @@ button:hover {
     background: rgba(90, 81, 86, 0.9);
 }
 
-/* ✅ Back to List Button */
+
 .back-link a {
     display: inline-block;
-    background-color: rgba(60, 51, 56, 0.9);  /* Darker for contrast */
+    background-color: rgba(60, 51, 56, 0.9);  
     color: white;  
     padding: 10px 15px;
     border-radius: 5px;
@@ -64,17 +64,17 @@ button:hover {
 }
 
 .banner {
-    width: 100%;  /* Ensures the banner spans the full width of the container */
+    width: 100%;  
     max-width: 100%;
     display: block;
-    margin: 0 auto;  /* Centers the banner */
+    margin: 0 auto;  
 }
 
 
 .banner img {
-    width: 100%; /* Full width inside container */
-    max-width: 900px; /* Same as container width */
+    width: 100%; 
+    max-width: 900px; 
     height: auto;
-    border-radius: 10px; /* Optional: Rounded corners */
+    border-radius: 10px; 
 }
 

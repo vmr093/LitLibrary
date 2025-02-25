@@ -1,7 +1,6 @@
-@import url('book_list.css'); /* Inherit global styles */
-@import url('global.css'); /* Inherit the background */
+@import url('book_list.css'); 
+@import url('global.css'); 
 
-@import url('global.css'); /* Inherit background */
 
 .container {
     width: 80%;
@@ -14,13 +13,13 @@
     margin: auto;
 }
 
-/* Header Styling */
+
 h2 {
     color: rgba(60, 51, 56, 0.8);
     font-size: 24px;
 }
 
-/* Form Styling */
+
 form {
     display: flex;
     flex-direction: column;
@@ -42,7 +41,7 @@ button:hover {
     background: rgba(90, 81, 86, 0.9);
 }
 
-/* Center the back link */
+
 .back-link {
     margin-top: 20px;
 }
@@ -59,18 +58,18 @@ button:hover {
 }
 
 .banner {
-    width: 100%; /* Full width on all pages */
+    width: 100%; 
     display: flex;
-    justify-content: center; /* Centers the banner */
+    justify-content: center; 
     align-items: center;
-    margin-bottom: 20px; /* Space between banner and content */
+    margin-bottom: 20px; 
 }
 
 .banner img {
-    width: 100%; /* Full width inside container */
-    max-width: 900px; /* Same as container width */
+    width: 100%; 
+    max-width: 900px; 
     height: auto;
-    border-radius: 10px; /* Optional: Rounded corners */
+    border-radius: 10px; 
 }
 
 .book-cover {

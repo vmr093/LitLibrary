@@ -1,7 +1,7 @@
 /* Import global styles */
-@import url('global.css'); /* Ensures background consistency */
+@import url('global.css'); 
 
-/* Background Styling */
+
 body {
     font-family: Arial, sans-serif;
     background-image: url('/static/books_app/images/background.webp');
@@ -17,7 +17,7 @@ body {
     color: rgba(60, 51, 56, 0.8);
 }
 
-/* Centering Container */
+
 .container {
     width: 80%;
     max-width: 900px;
@@ -28,14 +28,14 @@ body {
     text-align: center;
 }
 
-/* Header Styling */
+
 h2 {
     color: rgba(60, 51, 56, 0.8);
     font-size: 28px;
     font-weight: bold;
 }
 
-/* Navigation Styling */
+
 nav {
     margin-bottom: 20px;
 }
@@ -50,7 +50,7 @@ nav a:hover {
     color: #d63447;
 }
 
-/* Table Styling */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -69,7 +69,7 @@ th {
     font-weight: bold;
 }
 
-/* Button Actions */
+
 a {
     color: rgba(60, 51, 56, 0.8);
     font-weight: bold;
@@ -82,16 +82,16 @@ a:hover {
 .banner {
     width: 100%; /* Full width on all pages */
     display: flex;
-    justify-content: center; /* Centers the banner */
+    justify-content: center; 
     align-items: center;
-    margin-bottom: 20px; /* Space between banner and content */
+    margin-bottom: 20px; 
 }
 
 .banner img {
-    width: 100%; /* Full width inside container */
-    max-width: 900px; /* Same as container width */
+    width: 100%; 
+    max-width: 900px; 
     height: auto;
-    border-radius: 10px; /* Optional: Rounded corners */
+    border-radius: 10px; 
 }
 
 

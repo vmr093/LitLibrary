@@ -1,9 +1,9 @@
-@import url('global.css'); /* ✅ Inherit the background & styles */
+@import url('global.css'); 
 
-/* Background Styling */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #d2e1dc; /* Soft greenish background */
+    background-color: #d2e1dc; 
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
 }
 
-/* ✅ Container Styling */
+
 .container {
     width: 80%;
     max-width: 900px;
@@ -28,22 +28,22 @@ body {
     position: relative;
 }
 
-/* ✅ Banner Styling */
+
 .banner {
-    width: 100%;  /* Ensure the banner spans across the container */
+    width: 100%;  
     max-width: 100%;
-    border-top-left-radius: 15px;  /* Make the banner align with container */
+    border-top-left-radius: 15px;  
     border-top-right-radius: 15px;
 }
 
-/* ✅ Header Styling */
+
 h2 {
     color: rgba(60, 51, 56, 0.8);
     font-size: 24px;
     margin: 15px 0;
 }
 
-/* ✅ Form Styling */
+
 form {
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@ form {
     align-items: center;
 }
 
-/* ✅ Input Fields */
+
 input[type="text"],
 input[type="number"] {
     width: 50%;
@@ -63,7 +63,7 @@ input[type="number"] {
     text-align: center;
 }
 
-/* ✅ Button Styling */
+
 button {
     background: rgba(60, 51, 56, 0.8);
     color: white;
@@ -79,7 +79,7 @@ button:hover {
     background: rgba(90, 81, 86, 0.9);
 }
 
-/* ✅ Back Link Styling */
+
 .back-link {
     margin-top: 20px;
 }
