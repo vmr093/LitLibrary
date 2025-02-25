@@ -10,19 +10,19 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ✅ Load secret key safely
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 if not SECRET_KEY:
     raise ValueError("SECRET_KEY is missing. Check environment variables.")
 
 # ✅ Debug mode (Disable in production)
-if not 'ON_HEROKU' in os.environ:
-    DEBUG = True
+DEBUG = not os.getenv('ON_HEROKU')
 
 # ✅ Allowed Hosts
 ALLOWED_HOSTS = ["*"]
 
 # ✅ Installed Apps
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',  # ✅ Ensures Whitenoise handles static files correctly
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -35,7 +35,7 @@ INSTALLED_APPS = [
 # ✅ Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ Ensures static file serving on Heroku
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -68,7 +68,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bookcase.wsgi.application'
 
 # ✅ Database Configuration
-if 'ON_HEROKU' in os.environ:
+if os.getenv('ON_HEROKU'):
     DATABASES = {
         "default": dj_database_url.config(
             env='DATABASE_URL',
@@ -103,14 +103,16 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# ✅ Static & Media Files
+# ✅ Static & Media Files (Fixed)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "books_app/static"),]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "books_app/static")]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# ✅ WhiteNoise Static Files Compression & Storage (ESSENTIAL for Heroku)
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # ✅ Authentication settings
 LOGIN_URL = '/login/'  
