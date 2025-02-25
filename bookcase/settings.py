@@ -95,10 +95,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# Ensure static files are correctly collected from your app's static directory
 STATICFILES_DIRS = [
-    BASE_DIR / "books_app/static",
+    BASE_DIR / "static",  # Add a general static folder (if you have one)
+    BASE_DIR / "books_app/static",  # Ensure this path is correct
 ]
 
+# Use WhiteNoise for serving static files in production
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
