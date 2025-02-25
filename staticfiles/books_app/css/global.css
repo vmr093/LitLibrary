@@ -1,0 +1,18 @@
+/* Global Background Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/books_app/images/background.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: rgba(60, 51, 56, 0.8); 
+}
+
+
+
