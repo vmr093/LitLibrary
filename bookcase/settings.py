@@ -62,31 +62,32 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookcase.wsgi.application'
 
-# ✅ PostgreSQL Database Configuration
-DATABASES = {
-    if 'ON_HEROKU' in os.environ:
+import os
+import dj_database_url
+
+# Check if running on Heroku
+if 'ON_HEROKU' in os.environ:
     DATABASES = {
         "default": dj_database_url.config(
             env='DATABASE_URL',
             conn_max_age=600,
             conn_health_checks=True,
             ssl_require=True,
-        ),
+        )
     }
 else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'books_app',
-            # The value of 'NAME' should match the value of 'NAME' you replaced.
+            'NAME': os.getenv("books_app"),
+            'USER': os.getenv("vr"),
+            'PASSWORD': os.getenv("Nala1234"),
+            'HOST': os.getenv("localhost"),
+            'PORT': os.getenv("5432"),
         }
     }
- 
-        'USER': 'vr',
-        'PASSWORD': 'Nala1234',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+
+    
 
 
 # Password validation
