@@ -10,7 +10,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('%*0h7^v)!&v*xswt7(1uxhc=r&5w=)a)de#c0u-3419$p3g3!')
+SECRET_KEY = os.getenv('2OFINSOIVJEOSIFJONMSOIEFJOSDIJF')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if not 'ON_HEROKU' in os.environ:
