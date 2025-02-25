@@ -4,7 +4,7 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign Up</title>
     
     <link rel="stylesheet" type="text/css" href="{% static 'books_app/css/login.css' %}">
 </head>
@@ -14,17 +14,15 @@
         <div class="banner">
             <img src="{% static 'books_app/images/banner2.jpg' %}" alt="LitLibrary Banner">
         </div>
-        <h2>📖 Welcome to LitLibrary</h2>
+        <h2>📚 Create an Account</h2>
         
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">🔑 Login</button>
+            <button type="submit">✍️ Sign Up</button>
         </form>
 
-        <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
-
-        <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+        <p>Already have an account? <a href="{% url 'login' %}">Log in here</a></p>
     </div>
 </body>
 </html>

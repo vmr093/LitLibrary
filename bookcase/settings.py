@@ -1,26 +1,27 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import os
 import dj_database_url
 
+# ✅ Load environment variables from .env
 load_dotenv()
 
-# Base directory
+# ✅ Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('2OFINSOIVJEOSIFJONMSOIEFJOSDIJF')
+# ✅ Load secret key safely
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+if not SECRET_KEY:
+    raise ValueError("SECRET_KEY is missing. Check environment variables.")
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# ✅ Debug mode (Disable in production)
 if not 'ON_HEROKU' in os.environ:
     DEBUG = True
 
-
+# ✅ Allowed Hosts
 ALLOWED_HOSTS = ["*"]
-  
 
-
+# ✅ Installed Apps
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -31,6 +32,7 @@ INSTALLED_APPS = [
     'books_app',  
 ]
 
+# ✅ Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -42,8 +44,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# ✅ URL Configuration
 ROOT_URLCONF = 'bookcase.urls'
 
+# ✅ Templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -60,12 +64,10 @@ TEMPLATES = [
     },
 ]
 
+# ✅ WSGI Application
 WSGI_APPLICATION = 'bookcase.wsgi.application'
 
-import os
-import dj_database_url
-
-# Check if running on Heroku
+# ✅ Database Configuration
 if 'ON_HEROKU' in os.environ:
     DATABASES = {
         "default": dj_database_url.config(
@@ -79,18 +81,15 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv("books_app"),
-            'USER': os.getenv("vr"),
-            'PASSWORD': os.getenv("Nala1234"),
-            'HOST': os.getenv("localhost"),
-            'PORT': os.getenv("5432"),
+            'NAME': os.getenv("DB_NAME"),
+            'USER': os.getenv("DB_USER"),
+            'PASSWORD': os.getenv("DB_PASSWORD"),
+            'HOST': os.getenv("DB_HOST"),
+            'PORT': os.getenv("DB_PORT"),
         }
     }
 
-    
-
-
-# Password validation
+# ✅ Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -98,7 +97,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# Internationalization
+# ✅ Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -118,5 +117,5 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/books/'  
 LOGOUT_REDIRECT_URL = '/login/'  
 
-# Default primary key field type
+# ✅ Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
