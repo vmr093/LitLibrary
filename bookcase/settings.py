@@ -3,39 +3,32 @@ from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
 
-# ✅ Load environment variables from .env
 load_dotenv()
 
-# ✅ Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ✅ Load secret key safely
 SECRET_KEY = os.getenv('SECRET_KEY')
 if not SECRET_KEY:
     raise ValueError("SECRET_KEY is missing. Check environment variables.")
 
-# ✅ Debug mode (Disable in production)
-DEBUG = not os.getenv('ON_HEROKU')
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-# ✅ Allowed Hosts
 ALLOWED_HOSTS = ["*"]
 
-# ✅ Installed Apps
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',  # ✅ Ensures Whitenoise handles static files correctly
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'books_app',  
+    'books_app',
+    'whitenoise.runserver_nostatic',
 ]
 
-# ✅ Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ Ensures static file serving on Heroku
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -44,10 +37,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# ✅ URL Configuration
 ROOT_URLCONF = 'bookcase.urls'
 
-# ✅ Templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -64,11 +55,9 @@ TEMPLATES = [
     },
 ]
 
-# ✅ WSGI Application
 WSGI_APPLICATION = 'bookcase.wsgi.application'
 
-# ✅ Database Configuration
-if os.getenv('ON_HEROKU'):
+if 'ON_HEROKU' in os.environ:
     DATABASES = {
         "default": dj_database_url.config(
             env='DATABASE_URL',
@@ -89,7 +78,6 @@ else:
         }
     }
 
-# ✅ Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -97,27 +85,26 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# ✅ Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# ✅ Static & Media Files (Fixed)
 STATIC_URL = '/static/'
+
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "books_app/static")]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    BASE_DIR / "books_app/static",
+]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# ✅ WhiteNoise Static Files Compression & Storage (ESSENTIAL for Heroku)
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-# ✅ Authentication settings
 LOGIN_URL = '/login/'  
 LOGIN_REDIRECT_URL = '/books/'  
 LOGOUT_REDIRECT_URL = '/login/'  
 
-# ✅ Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
