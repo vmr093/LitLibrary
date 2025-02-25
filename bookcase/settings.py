@@ -99,8 +99,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "books_app/static",
 ]
 
-
-
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
