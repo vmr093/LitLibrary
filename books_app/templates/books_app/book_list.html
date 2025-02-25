@@ -13,16 +13,15 @@
 <body>
     <div class="container">
         <div class="banner">
-            <img src="{% static 'books_app/images/Banner3.jpg' %}" alt="LitLiterature Banner">
+            <img src="{% static 'books_app/images/Banner3.jpg' %}" alt="LitLibrary Banner">
         </div>
     
-        <h2>My Books</h2>
+        <h2>📚 My Books</h2>
         <nav>
             <a href="{% url 'book_create' %}">➕ Add a New Book</a> | 
             <a href="{% url 'favorite_books' %}">❤️ View Favorites</a> | 
             <a href="{% url 'logout' %}">Logout</a>
         </nav>
-    
 
         <table>
             <tr>
@@ -44,7 +43,7 @@
                 <td><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></td>
                 <td>{{ book.author }}</td>
                 <td>{{ book.get_status_display }}</td>
-                <td>
+                <td class="actions">
                     <a href="{% url 'book_update' book.id %}">✏️ Edit</a> |
                     <a href="{% url 'book_delete' book.id %}">🗑️ Delete</a> |
                     <a href="{% url 'toggle_favorite' book.id %}">

@@ -1,7 +1,5 @@
 @import url('global.css'); /* Inherit the background */
 
-
-
 body {
     font-family: Arial, sans-serif;
     background-image: url('/static/books_app/images/background.webp');
@@ -17,29 +15,31 @@ body {
     color: rgba(60, 51, 56, 0.8);
 }
 
-
 .container {
-    width: 90%;
-    max-width: 1100px;
+    width: 75%;  /* Adjust width to match Add Book page */
+    max-width: 1000px;
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     text-align: center;
-    margin: auto;
+    margin: 60px auto; /* Centers container and adds space from top */
 }
 
+nav {
+    margin: 20px 0;
+}
 
 nav a {
     text-decoration: none;
     color: rgba(60, 51, 56, 0.8);
     font-weight: bold;
+    margin: 0 10px;
 }
 
 nav a:hover {
     color: #d63447;
 }
-
 
 table {
     width: 100%;
@@ -59,30 +59,20 @@ th {
     font-weight: bold;
 }
 
-
-.favorite {
-    color: red;
-}
-
-.unfavorite {
-    color: gray;
-}
-
 .banner {
-    width: 100%; 
+    width: 100%;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .banner img {
-    width: 100%; 
-    max-width: 900px; 
+    width: 100%;
+    max-width: 800px; /* Matches banner size in Add Book page */
     height: auto;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
-
 
 .book-cover {
     width: 100px;
@@ -90,4 +80,18 @@ th {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
+}
+
+.actions a {
+    margin: 0 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.favorite {
+    color: red;
+}
+
+.unfavorite {
+    color: gray;
 }
