@@ -96,3 +96,10 @@ button:hover {
     border-radius: 10px; 
 }
 
+.wider-container {
+    max-width: 800px; /* Adjust this width to match your other pages */
+    width: 90%; /* Ensures responsiveness */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;
+}
+
